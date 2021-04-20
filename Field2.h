@@ -11,22 +11,22 @@ void Send_string(string msg, SOCKET sock);
 class Field2
 {
 private:
-    char aa = 'o';
-    char ab = 'o';
-    char ac = 'o';
-    char ba = 'o';
-    char bb = 'o';
-    char bc = 'o';
-    char ca = 'o';
-    char cb = 'o';
-    char cc = 'o';
-    char cd = 'o';
-    char da = 'o';
-    char db = 'o';
-    char dc = 'o';
-    char ea = 'o';
-    char eb = 'o';
-    char ec = 'o';
+    char aa = 'O';
+    char ab = 'O';
+    char ac = 'O';
+    char ba = 'O';
+    char bb = 'O';
+    char bc = 'O';
+    char ca = 'O';
+    char cb = 'O';
+    char cc = 'O';
+    char cd = 'O';
+    char da = 'O';
+    char db = 'O';
+    char dc = 'O';
+    char ea = 'O';
+    char eb = 'O';
+    char ec = 'O';
 
     int score_A = 0;
     int score_B = 0;
@@ -331,37 +331,37 @@ public:
 
         string mg = send();
 
-        if (d == 1 && aa == 'o')
+        if (d == 1 && aa == 'O')
             aa = a;
-        if (d == 2 && ab == 'o')
+        if (d == 2 && ab == 'O')
             ab = a;
-        if (d == 3 && ac == 'o')
+        if (d == 3 && ac == 'O')
             ac = a;
-        if (d == 4 && ba == 'o')
+        if (d == 4 && ba == 'O')
             ba = a;
-        if (d == 5 && bb == 'o')
+        if (d == 5 && bb == 'O')
             bb = a;
-        if (d == 6 && bc == 'o')
+        if (d == 6 && bc == 'O')
             bc = a;
-        if (d == 7 && ca == 'o')
+        if (d == 7 && ca == 'O')
             ca = a;
-        if (d == 8 && cb == 'o')
+        if (d == 8 && cb == 'O')
             cb = a;
-        if (d == 9 && cc == 'o')
+        if (d == 9 && cc == 'O')
             cc = a;
-        if (d == 10 && cc == 'o')
+        if (d == 10 && cc == 'O')
             cd = a;
-        if (d == 11 && aa == 'o')
+        if (d == 11 && aa == 'O')
             da = a;
-        if (d == 12 && ab == 'o')
+        if (d == 12 && ab == 'O')
             db = a;
-        if (d == 13 && ac == 'o')
+        if (d == 13 && ac == 'O')
             dc = a;
-        if (d == 14 && ba == 'o')
+        if (d == 14 && ba == 'O')
             ea = a;
-        if (d == 15 && bb == 'o')
+        if (d == 15 && bb == 'O')
             eb = a;
-        if (d == 16 && bc == 'o')
+        if (d == 16 && bc == 'O')
             ec = a;
 
         if (send() == mg)
