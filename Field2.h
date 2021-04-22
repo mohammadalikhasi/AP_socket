@@ -125,7 +125,7 @@ public:
     void Win()
     {
         if (aa != 'O' && ab != 'O' && ac != 'O' && ba != 'O' && bb != 'O' &&
-            bc != 'O' && ca != 'O' && cb != 'O' && cc != 'O' && cd != 'O' && 
+            bc != 'O' && ca != 'O' && cb != 'O' && cc != 'O' && cd != 'O' &&
             da != 'O' && db != 'O' && dc != 'O' && ea != 'O' && eb != 'O' && ec != 'O')
         {
             show();
@@ -136,7 +136,6 @@ public:
                      << endl
                      << "player " << A_user << " wins";
                 Send_string(send(), socka);
-                exit(0);
             }
             if (score_A < score_B)
             {
@@ -144,7 +143,6 @@ public:
                      << endl
                      << "player " << B_user << " wins";
                 Send_string(send(), socka);
-                exit(0);
             }
             if (score_A == score_B)
             {
@@ -152,6 +150,18 @@ public:
                      << endl
                      << "nobody won";
                 Send_string(send(), socka);
+            }
+
+            string pa;
+            cout << "Are you want to play again??(yes/no)";
+            cin >> pa;
+            if (pa == "yes")
+            {
+                Send_string(pa, socka);
+            }
+            if (pa == "no")
+            {
+                Send_string(pa, socka);
                 exit(0);
             }
         }
@@ -228,11 +238,11 @@ public:
     void show()
     {
         system("cls");
-        
+
         Set_score_A();
-		Set_score_B();
-		cout << A_user << ":" << score_A << "\t\t\t" 
-             <<	B_user << ":" << score_B;
+        Set_score_B();
+        cout << A_user << ":" << score_A << "\t\t\t"
+             << B_user << ":" << score_B;
 
         cout << endl
              << endl
@@ -322,7 +332,7 @@ public:
     {
         Win();
         show();
-        
+
         cout << endl
              << "please enter number of place";
 
