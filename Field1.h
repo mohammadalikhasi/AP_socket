@@ -1,6 +1,4 @@
 #pragma once
-#pragma once
-#pragma once
 #include <iostream>
 #include <string>
 #include <WinSock2.h>
@@ -48,20 +46,33 @@ public:
 			{
 				cout << endl << endl << "player " << A_user << " wins";
 				Send_string(send(), socka);
-				exit(0);
+				
 			}
 			if (score_A < score_B)
 			{
 				cout << endl << endl << "player " << B_user << " wins";
 				Send_string(send(), socka);
-				exit(0);
+				
 			}
 			if (score_A == score_B)
 			{
 				cout << endl << endl << "nobody won";
 				Send_string(send(), socka);
-				exit(0);
+				
 			}
+
+			string pa;
+            cout << "Are you want to play again??(yes/no)";
+            cin >> pa;
+            if (pa == "yes")
+            {
+                Send_string(pa, socka);
+            }
+            if (pa == "no")
+            {
+                Send_string(pa, socka);
+                exit(0);
+            }
 
 		}
 	}
@@ -141,12 +152,15 @@ public:
 		system("cls");
 		Set_score_A();
 		Set_score_B();
+
 		cout << A_user << ":" << score_A << "\t\t\t" <<
 			B_user << ":" << score_B;
 		cout << endl << endl << endl << endl;
-		cout << aa << "__" << ab << "__" << ac << endl << "|  |  |"
-			<< endl << ba << "__" << bb << "__" << bc << endl << "|  |  |" <<
-			endl << ca << "__" << cb << "__" << cc << endl;
+		cout << aa   << "__" << ab << "__" << ac << "\t\t\t\t" << "1" << "__" << "2" << "__" << "3"
+		 << endl << "|  |  |"  <<"\t\t\t\t"  << "|  |  |"
+         << endl << ba << "__" << bb << "__" << bc <<"\t\t\t\t"<< "4" << "__" << "5" << "__" << "6"
+		 << endl << "|  |  |"  << "\t\t\t\t" << "|  |  |"
+		 << endl << ca << "__" << cb << "__" << cc <<"\t\t\t\t"<< "7" << "__" << "8" << "__" << "9" << endl;
 	}
 	string send() {
 		string a;
