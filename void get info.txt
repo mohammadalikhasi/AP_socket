@@ -1,0 +1,26 @@
+void Get_info(SOCKET sock, Client& A) {
+	string user;
+	cout << "please enter your username" << endl;
+	cin >> user;
+	Send_string(user, sock);
+	cout << "please choose your char(except O)" << endl;
+	char a;
+	cin >> a;
+	while (a == "O")
+	{
+		cout << "enter again";
+		cin >> a;
+	}
+	Send_schar(a, sock);
+	int f;
+	cout << "please enter your field" << endl;
+	cin >> f;
+	string fi;
+	fi = to_string(f);
+	Send_string(user, sock);
+	Send_char(a, sock);
+	Send_string(fi, sock);
+	A.Set_char(a);
+	A.Set_num(f);
+	A.Set_user(user);
+}
