@@ -38,7 +38,7 @@ public:
 	void Set_aa(char new_char) {
 		aa = new_char;
 	}
-	void Win() {
+	int Win() {
 		if (aa != 'O' && ab != 'O' && ac != 'O' && ba != 'O' && bb != 'O' &&
 			bc != 'O' && ca != 'O' && cb != 'O' && cc != 'O') {
 			show();
@@ -46,35 +46,23 @@ public:
 			{
 				cout << endl << endl << "player " << A_user << " wins";
 				Send_string(send(), socka);
-				
+				exit(0);
 			}
 			if (score_A < score_B)
 			{
 				cout << endl << endl << "player " << B_user << " wins";
 				Send_string(send(), socka);
-				
+				exit(0);
 			}
 			if (score_A == score_B)
 			{
 				cout << endl << endl << "nobody won";
 				Send_string(send(), socka);
-				
+				exit(0);
 			}
-
-			string pa;
-            cout << "Are you want to play again??(yes/no)";
-            cin >> pa;
-            if (pa == "yes")
-            {
-                Send_string(pa, socka);
-            }
-            if (pa == "no")
-            {
-                Send_string(pa, socka);
-                exit(0);
-            }
-
+			return 0;
 		}
+		return 1;
 	}
 
 	void Set_ab(char new_char) {
@@ -156,11 +144,11 @@ public:
 		cout << A_user << ":" << score_A << "\t\t\t" <<
 			B_user << ":" << score_B;
 		cout << endl << endl << endl << endl;
-		cout << aa   << "__" << ab << "__" << ac << "\t\t\t\t" << "1" << "__" << "2" << "__" << "3"
-		 << endl << "|  |  |"  <<"\t\t\t\t"  << "|  |  |"
-         << endl << ba << "__" << bb << "__" << bc <<"\t\t\t\t"<< "4" << "__" << "5" << "__" << "6"
-		 << endl << "|  |  |"  << "\t\t\t\t" << "|  |  |"
-		 << endl << ca << "__" << cb << "__" << cc <<"\t\t\t\t"<< "7" << "__" << "8" << "__" << "9" << endl;
+		cout << aa << "__" << ab << "__" << ac << "\t\t\t\t" << "1" << "__" << "2" << "__" << "3"
+			<< endl << "|  |  |" << "\t\t\t\t" << "|  |  |"
+			<< endl << ba << "__" << bb << "__" << bc << "\t\t\t\t" << "4" << "__" << "5" << "__" << "6"
+			<< endl << "|  |  |" << "\t\t\t\t" << "|  |  |"
+			<< endl << ca << "__" << cb << "__" << cc << "\t\t\t\t" << "7" << "__" << "8" << "__" << "9" << endl;
 	}
 	string send() {
 		string a;
@@ -201,7 +189,9 @@ public:
 		cc = a[8];
 	}
 	void Fill() {
-		Win();
+
+		if (Win() == 0)
+			return;
 		show();
 		cout << endl << "please enter number of place";
 		int d, st = 1;
@@ -236,3 +226,4 @@ public:
 		Win();
 	}
 };
+
