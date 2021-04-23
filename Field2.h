@@ -362,19 +362,19 @@ public:
             cb = a;
         if (d == 9 && cc == 'O')
             cc = a;
-        if (d == 10 && cc == 'O')
+        if (d == 10 && cd == 'O')
             cd = a;
-        if (d == 11 && aa == 'O')
+        if (d == 11 && da == 'O')
             da = a;
-        if (d == 12 && ab == 'O')
+        if (d == 12 && db == 'O')
             db = a;
-        if (d == 13 && ac == 'O')
+        if (d == 13 && dc == 'O')
             dc = a;
-        if (d == 14 && ba == 'O')
+        if (d == 14 && ea == 'O')
             ea = a;
-        if (d == 15 && bb == 'O')
+        if (d == 15 && eb == 'O')
             eb = a;
-        if (d == 16 && bc == 'O')
+        if (d == 16 && ec == 'O')
             ec = a;
 
         if (send() == mg)
