@@ -133,35 +133,25 @@ public:
             if (score_A > score_B)
             {
                 cout << endl
-                     << endl
-                     << "player " << A_user << " wins";
+                    << endl
+                    << "player " << A_user << " wins";
                 Send_string(send(), socka);
+                exit(0);
             }
             if (score_A < score_B)
             {
                 cout << endl
-                     << endl
-                     << "player " << B_user << " wins";
+                    << endl
+                    << "player " << B_user << " wins";
                 Send_string(send(), socka);
+                exit(0);
             }
             if (score_A == score_B)
             {
                 cout << endl
-                     << endl
-                     << "nobody won";
+                    << endl
+                    << "nobody won";
                 Send_string(send(), socka);
-            }
-
-            string pa;
-            cout << "Are you want to play again??(yes/no)";
-            cin >> pa;
-            if (pa == "yes")
-            {
-                Send_string(pa, socka);
-            }
-            if (pa == "no")
-            {
-                Send_string(pa, socka);
                 exit(0);
             }
         }
@@ -242,29 +232,29 @@ public:
         Set_score_A();
         Set_score_B();
         cout << A_user << ":" << score_A << "\t\t\t"
-             << B_user << ":" << score_B;
+            << B_user << ":" << score_B;
 
         cout << endl
-             << endl
-             << endl
-             << endl;
-        cout << aa << "_____" << ab << "_____" << ac <<"\t\t\t\t" << "1" << "_____" << "2" << "_____" << "3" 
-        << endl
-        << "|     |     |" <<"\t\t\t\t" << "|     |     |" 
-        << endl 
-        << "|  " << ba << "__" << bb << "__" << bc << "  |" <<"\t\t\t\t"<< "|  " << "4" << "__" << "5" << "__" << "6" << "  |"
-        << endl
-        << "|  |     |  |"<<"\t\t\t\t" << "|  |     |  |"
-        << endl
-        << ca << "__" << cb << "     " << cc << "__" << cd<<"\t\t\t\t" << "7" << "__" << "8" << "     " << "9" << "__" << "10"
-        << endl
-        << "|  |     |  |"<<"\t\t\t\t" << "|  |     |  |"
-        << endl
-        << "|  " << da << "__" << db << "__" << dc << "  |"<<"\t\t\t\t" << "|  " << "11" << "_" << "12" << "_" << "13" << " |"
-        << endl
-        << "|     |     |" <<"\t\t\t\t" << "|     |     |" 
-        << endl
-        << ea << "_____" << eb << "_____" << ec <<"\t\t\t\t" << "14" << "____" << "15" << "____" << "16" << endl;
+            << endl
+            << endl
+            << endl;
+        cout << aa << "_____" << ab << "_____" << ac << "\t\t\t\t" << "1" << "_____" << "2" << "_____" << "3"
+            << endl
+            << "|     |     |" << "\t\t\t\t" << "|     |     |"
+            << endl
+            << "|  " << ba << "__" << bb << "__" << bc << "  |" << "\t\t\t\t" << "|  " << "4" << "__" << "5" << "__" << "6" << "  |"
+            << endl
+            << "|  |     |  |" << "\t\t\t\t" << "|  |     |  |"
+            << endl
+            << ca << "__" << cb << "     " << cc << "__" << cd << "\t\t\t\t" << "7" << "__" << "8" << "     " << "9" << "__" << "10"
+            << endl
+            << "|  |     |  |" << "\t\t\t\t" << "|  |     |  |"
+            << endl
+            << "|  " << da << "__" << db << "__" << dc << "  |" << "\t\t\t\t" << "|  " << "11" << "_" << "12" << "_" << "13" << " |"
+            << endl
+            << "|     |     |" << "\t\t\t\t" << "|     |     |"
+            << endl
+            << ea << "_____" << eb << "_____" << ec << "\t\t\t\t" << "14" << "____" << "15" << "____" << "16" << endl;
     }
     string send()
     {
@@ -291,7 +281,7 @@ public:
     {
         Set_a(A), Set_b(B);
     }
-    Field2(char *a)
+    Field2(char* a)
     {
         aa = a[0];
         ab = a[1];
@@ -337,7 +327,7 @@ public:
         show();
 
         cout << endl
-             << "please enter number of place";
+            << "please enter number of place";
 
         int d;
         cin >> d;
